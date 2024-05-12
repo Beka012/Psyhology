@@ -24,19 +24,15 @@ def read_docx_lines(docx_file,question_number=1):
               pick_answer = input("Введите ваш ответ: ")
               if pick_answer == 'a' or pick_answer == 1:
                 pick_answer = 1
-                right_answer = -1
               elif pick_answer == 'b' or pick_answer == 2:
                 pick_answer = 2
-                right_answer = -1
               elif pick_answer == 'c' or pick_answer == 3:
                 pick_answer = 3
-                right_answer = -1
               elif pick_answer == 'd' or pick_answer == 4:
                 pick_answer = 4
-                right_answer = -1
               else:
                 print('DONT UNDESTAND')
-                pick_answer = -1
+                pick_answer =-1
             if pick_answer != right_answer:
               error_answer += 1
               print('Wrong answer You have ' + str(3 - error_answer) + ' heart correct answer = ' + answer_array[
@@ -45,17 +41,17 @@ def read_docx_lines(docx_file,question_number=1):
                 print('YOU LOSE!! YOU LOSS 3 HEART.')
                 return
             else:
+              right_answer = -1
               print('RIGHT!')
           print(line)
       if "<variant>" in line:
         print(answer_array[count_variant]+line.replace("<variant>", '.'))
         count_variant+=1
-      if "<variantright>" i
-      n line:
+      if "<variantright>" in line:
         print(answer_array[count_variant]+line.replace("<variantright>", '.'))
         count_variant+=1
         right_answer = count_variant
 
 if __name__ == "__main__":
   file_path = "Sql база  LEGENDARY.docx"
-  read_docx_lines(file_path)
+  read_docx_lines(file_path,1)
