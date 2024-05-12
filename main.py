@@ -23,8 +23,6 @@ def read_docx_lines(docx_file):
               pick_answer = 3
             elif pick_answer == 'd' or pick_answer == 4:
               pick_answer = 4
-            elif pick_answer == 'e' or pick_answer == 5:
-              pick_answer = 5
             else:
               print('DONT UNDESTAND')
               pick_answer = -1
